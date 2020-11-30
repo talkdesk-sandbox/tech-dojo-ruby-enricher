@@ -18,15 +18,15 @@ POST [`https://tech-dojo-ruby-automations.herokuapp.com/events`](https://tech-do
 
 ```json
 {
-	"event": "create",
-	"contact_id": "id_1",
-	"data": {
-		"title": "This is a title",
-		"description": "description",
-		"status": "open",
-		"name": "{{contact.name}}",
-		"phone_number": "{{contact.phone_number}}"
-	}
+  "event": "create",
+  "contact_id": "id_1",
+  "data": {
+    "title": "This is a title",
+    "description": "description",
+    "status": "open",
+    "name": "{{contact.name}}",
+    "phone_number": "{{contact.phone_number}}"
+  }
 }
 ```
 
@@ -36,12 +36,12 @@ POST [`https://tech-dojo-ruby-automations.herokuapp.com/events`](https://tech-do
 
 ```json
 {
-	"event": "update",
-	"contact_id": "id_1",
-	"agent_id": "agent_id_1",
-	"data": {
-		"title": "{{agent.name}}",
-		"status": "closed"
+  "event": "update",
+  "contact_id": "id_1",
+  "agent_id": "agent_id_1",
+  "data": {
+    "title": "{{agent.name}}",
+    "status": "closed"
   }
 }
 ```
@@ -52,8 +52,8 @@ POST [`https://tech-dojo-ruby-automations.herokuapp.com/events`](https://tech-do
 
 ```json
 {
-	"event": "delete",
-	"ticket_id": "t_id_1"
+  "event": "delete",
+  "ticket_id": "t_id_1"
 }
 ```
 
@@ -63,14 +63,14 @@ GET [`https://tech-dojo-ruby-enricher.herokuapp.com/enrich`](https://tech-dojo-r
 
 ```json
 {
-	contact: {
-		id: "id",
-		fields: ["name", "phone"]
-	}
-	agent: {
-		id: "id",
-		fields: ["name", "team"]
-	}
+  "contact": {
+    "id": "id",
+    "fields": ["name", "phone"]
+  },
+  "agent": {
+    "id": "id",
+    "fields": ["name", "team"]
+  }
 }
 ```
 
@@ -78,16 +78,16 @@ GET [`https://tech-dojo-ruby-enricher.herokuapp.com/enrich`](https://tech-dojo-r
 
 ```json
 {
-	contact: {
-		id: "id",
-		name: "Peter John",
-		p: "+351111111111"
-	},
-	agent: {
-		id: "id",
-		name: "John Peter",
-		team: "Integrations"
-	}
+  "contact": {
+    "id": "id",
+    "name": "Peter John",
+    "p": "+351111111111"
+  },
+  "agent": {
+    "id": "id",
+    "name": "John Peter",
+    "team": "Integrations"
+  }
 }
 ```
 
@@ -96,13 +96,13 @@ GET [`https://tech-dojo-ruby-enricher.herokuapp.com/enrich`](https://tech-dojo-r
 POST [`https://tech-dojo-ruby-automations.herokuapp.com/tickets`](https://tech-dojo-ruby-automations.herokuapp.com/events)
 
 ```json
- {
-		"title": "This is a title",
-		"description": "description",
-		"status": "open",
-		"name": "Peter John",
-		"phone_number": "+351111111111"
- }
+{
+  "title": "This is a title",
+  "description": "description",
+  "status": "open",
+  "name": "Peter John",
+  "phone_number": "+351111111111"
+}
 ```
 
 **External API request (5)**
@@ -111,14 +111,14 @@ POST `https://mocky....`
 
 ```json
 {
-		"subject": "This is a title",
-		"content": "description",
-		"status": "open",
-		"customer": {
-			"name": "Peter John",
-			"phone": "+35111111111"
-		}
- }
+  "subject": "This is a title",
+  "content": "description",
+  "status": "open",
+  "customer": {
+    "name": "Peter John",
+    "phone": "+35111111111"
+  }
+}
 ```
 
 # Workshop Instructions
