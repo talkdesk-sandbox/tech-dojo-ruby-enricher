@@ -10,6 +10,8 @@ module Services
     end
 
     def enrich(contact_id, fields)
+      raise 'Unauthorized operation' if fields.include?('bank_number')
+
       fields.push('id')
       @contacts_repository.find_by_id(contact_id).select do |key, _|
         fields.include?(key.to_s)
