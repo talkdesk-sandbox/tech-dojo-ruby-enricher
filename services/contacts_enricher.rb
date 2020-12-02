@@ -10,6 +10,7 @@ module Services
     end
 
     def enrich(contact_id, fields)
+      fields.push('id')
       @contacts_repository.find_by_id(contact_id).select do |key, _|
         fields.include?(key.to_s)
       end
