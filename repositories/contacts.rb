@@ -8,7 +8,9 @@ require_relative '../seeds/contacts.rb'
 class ContactsRepository
   include Seeds
 
-  def find_by_id(_id)
-    contact_list[0]
+  def find_by_id(id)
+    contact_list.detect do |contact|
+      contact[:id] == id
+    end
   end
 end

@@ -9,8 +9,10 @@ module Services
       @contacts_repository = options.fetch(:contacts_repository) { ContactsRepository.new }
     end
 
-    def enrich(contact_id)
-      @contacts_repository.find_by_id(contact_id)
+    def enrich(contact_id, fields)
+      @contacts_repository.find_by_id(contact_id).select do |key, _|
+        fields.include?(key.to_s)
+      end
     end
   end
 end

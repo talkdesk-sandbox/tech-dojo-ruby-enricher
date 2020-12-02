@@ -6,7 +6,8 @@ require 'json'
 require_relative 'services/contacts_enricher.rb'
 
 before do
-  content_type :json
+  request.body.rewind
+  @request_payload = JSON.parse request.body.read
 end
 
 after do
@@ -18,5 +19,7 @@ get '/' do
 end
 
 get '/enrich' do
-  Services::ContactsEnricher.new.enrich('contact_id_1')
+  id = @request_payload['contact']['id']
+  fields = @request_payload['contact']['fields']
+  Services::ContactsEnricher.new.enrich(id, fields)
 end
