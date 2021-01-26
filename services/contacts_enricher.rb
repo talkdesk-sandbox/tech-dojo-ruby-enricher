@@ -2,9 +2,11 @@
 
 require_relative '../repositories/contacts.rb'
 
+require 'json'
+
 module Services
   class ContactsEnricher
-    def initialize(options: {})
+    def initialize(options = {})
       @fields = options.fetch(:fields, [])
       @contacts_repository = options.fetch(:contacts_repository) { ContactsRepository.new }
     end
